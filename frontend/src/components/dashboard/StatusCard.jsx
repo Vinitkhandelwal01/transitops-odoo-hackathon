@@ -17,7 +17,10 @@ export default function StatusCard({ vehicles }) {
           <div key={vehicle.label} className="grid grid-cols-[74px_1fr] items-center gap-3">
             <div className="text-[12px] font-semibold text-zinc-300">{vehicle.label}</div>
             <div className="h-3 bg-[#232426]">
-              <div className={`h-full ${statusStyles[vehicle.label]} ${vehicle.widthClass}`} />
+              <div
+                className={`h-full ${statusStyles[vehicle.label]}`}
+                style={{ width: `${vehicle.percent ?? 0}%` }}
+              />
             </div>
           </div>
         ))}

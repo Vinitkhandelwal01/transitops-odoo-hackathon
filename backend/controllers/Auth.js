@@ -68,7 +68,7 @@ exports.register = async (req, res) => {
 // ==========================================================
 exports.login = async (req, res) => {
   try {
-    const { email, password, role, rememberMe } = req.body;
+    const { email, password, role, remember } = req.body; // frontend sends "remember", not "rememberMe"
  
     if (!email || !password) {
       return res.status(400).json({ message: "Email and password are required" });
@@ -133,10 +133,10 @@ exports.login = async (req, res) => {
     user.isLocked = false;
     user.lockedUntil = null;
     user.lastLogin = new Date();
-    user.rememberMe = !!rememberMe;
+    user.rememberMe = !!remember;
     await user.save();
  
-    const token = generateToken(user, rememberMe);
+    const token = generateToken(user, remember);
  
     return res.status(200).json({
       message: "Login successful",

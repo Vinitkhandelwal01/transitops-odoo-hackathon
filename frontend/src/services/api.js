@@ -19,7 +19,23 @@ api.interceptors.request.use((config) => {
 
 export const authApi = {
   login: (payload) => api.post('/auth/login', payload),
+  register: (payload) => api.post('/auth/register', payload),
   logout: () => api.post('/auth/logout'),
+  forgotPassword: (email) => api.post('/auth/forgot-password', { email }),
+  resetPassword: (token, password) => api.post(`/auth/reset-password/${token}`, { password }),
+  getMe: () => api.get('/auth/me'),
+}
+
+export const dashboardApi = {
+  getKpis: () => api.get('/dashboard/kpis'),
+  getRecentTrips: (limit) => api.get('/dashboard/recent-trips', { params: { limit } }),
+  getVehicleStatus: () => api.get('/dashboard/vehicle-status'),
+}
+
+export const settingsApi = {
+  get: () => api.get('/settings'),
+  update: (payload) => api.put('/settings', payload),
+  getRbac: () => api.get('/settings/rbac'),
 }
 
 export const getTrips = () => api.get('/trips')

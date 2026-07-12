@@ -16,5 +16,6 @@ router.use("/maintenance", maintenanceRoutes);
 router.use("/fuel", fuelRoutes);
 router.use("/expenses", expenseRoutes);
 router.use("/reports", reportsRoutes);
+router.use("/driver-safety", driverSafetyRoutes);
 
 module.exports = router;

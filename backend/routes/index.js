@@ -8,9 +8,11 @@ const maintenanceRoutes = require("./maintenanceRoutes");
 const fuelRoutes = require("./fuelRoutes");
 const expenseRoutes = require("./expenseRoutes");
 const reportsRoutes = require("./reportsRoutes");
+
 const driverSafetyRoutes = require("./driverSafetyRoutes"); // was missing before -> was crashing the server
 const dashboardRoutes = require("./dashboardRoutes");
 const settingsRoutes = require("./settingsRoutes");
+
 
 router.use("/auth", authRoutes);
 router.use("/vehicles", vehicleRoutes);

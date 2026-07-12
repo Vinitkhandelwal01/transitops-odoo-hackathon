@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { AlertTriangle, Check, Eye, EyeOff, LockKeyhole, Route, Truck } from 'lucide-react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import Button from '../components/common/button.jsx'
 import { Field, Input, Select } from '../components/common/input.jsx'
 import { useAuth } from '../context/AuthContext.jsx'
@@ -195,6 +195,13 @@ export default function Login() {
               <LockKeyhole className="size-4" />
               {loading ? 'Signing in...' : 'Sign In'}
             </Button>
+
+            <div className="mt-4 text-center text-sm text-zinc-400">
+              Don't have an account?{' '}
+              <Link to="/signup" className="font-medium text-sky-400 hover:text-sky-300">
+                Sign Up
+              </Link>
+            </div>
 
             <div className="mt-6 border-t border-zinc-800 pt-5 text-xs leading-6 text-zinc-500">
               <p>Access is scoped by role after login:</p>

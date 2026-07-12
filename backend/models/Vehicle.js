@@ -46,13 +46,13 @@ const vehicleSchema = new mongoose.Schema({
 
 }, { timestamps: true });
 
-vehicleSchema.pre("validate", function (next) {
+vehicleSchema.pre("validate", function () {
   if (this.capacity && !this.maxLoadCapacity) {
     this.maxLoadCapacity = this.capacity;
   } else if (this.maxLoadCapacity && !this.capacity) {
     this.capacity = this.maxLoadCapacity;
   }
-  next();
 });
+
 
 module.exports = mongoose.model("Vehicle", vehicleSchema);

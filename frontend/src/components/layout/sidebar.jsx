@@ -9,6 +9,8 @@ const navItems = [
   { label: 'Trips', to: '/trips' },
   { label: 'Maintenance', to: '/maintenance' },
   { label: 'Fuel & Expenses', to: '/fuel-expenses' },
+
+  { label: 'Analytics', to: '/analytics' },
   { label: 'Settings', to: '/settings' },
 ]
 

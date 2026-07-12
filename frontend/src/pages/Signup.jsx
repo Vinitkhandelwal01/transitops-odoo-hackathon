@@ -28,9 +28,13 @@ export default function Signup() {
     setLoading(true);
 
     try {
+      console.log(name)
+      console.log(email)
+      console.log(password)
+      console.log(role)
       await register(name, email, password, role);
       // Auth context auto logs in on successful registration, so we navigate to home
-      navigate("/fleet");
+      navigate("/dashboard");
     } catch (err) {
       setError(err.response?.data?.message || "Failed to create account");
     } finally {

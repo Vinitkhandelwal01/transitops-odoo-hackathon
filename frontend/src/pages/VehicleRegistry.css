@@ -1,0 +1,156 @@
+.content {
+  width: 100%;
+  min-height: 100vh;
+  color: #f8fafc;
+}
+
+.registry {
+  padding: 32px;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.filters select,
+.filters input {
+  background: #111c31;
+  color: #f8fafc;
+  border: 1px solid #26344d;
+  border-radius: 6px;
+  padding: 10px 14px;
+}
+
+.filters input {
+  width: 220px;
+}
+
+.add {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.registry table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #111c31;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.registry th,
+.registry td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #26344d;
+}
+
+.registry th {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.badge {
+  padding: 7px 12px;
+  border-radius: 20px;
+}
+
+.badge.available {
+  background: #065f46;
+  color: #34d399;
+}
+
+.badge.ontrip {
+  background: #1d4ed8;
+  color: #bfdbfe;
+}
+
+.badge.inshop {
+  background: #92400e;
+  color: #fbbf24;
+}
+
+.badge.retired {
+  background: #4b5563;
+  color: #e5e7eb;
+}
+
+.icon {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.icon.danger {
+  color: #ef4444;
+}
+
+.rule {
+  margin-top: 18px;
+  color: #f97316;
+  font-size: 13px;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  width: 420px;
+  background: #111c31;
+  padding: 28px;
+  border-radius: 10px;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-content input,
+.modal-content select {
+  padding: 10px;
+  background: #0f172a;
+  color: white;
+  border: 1px solid #334155;
+  border-radius: 6px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+}
+.registry-header {
+  margin-bottom: 28px;
+}
+
+.registry-header h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #f8fafc;
+}
+
+.registry-header p {
+  margin-top: 8px;
+  color: #94a3b8;
+}

@@ -3,23 +3,17 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 
-const routes = require("./routes");
-
-const Vehicle = require("./models/Vehicle");
-const Driver = require("./models/Driver");
-
-const bcrypt = require("bcryptjs");
-const User = require("./models/User");
-
+const routes = require('./routes');
+const Vehicle = require('./models/Vehicle');
+const Driver = require('./models/Driver');
+const bcrypt = require('bcryptjs');
+const User = require('./models/User');
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
-
-app.use("/api", routes);
-
-
+app.use('/api', routes);
 
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/transitops_dev';

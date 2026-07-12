@@ -89,4 +89,3 @@ exports.deleteVehicle = async (req, res) => {
     await vehicle.deleteOne();
     res.json({ message: "Vehicle deleted" });
   } catch (error) { res.status(400).json({ message: error.message }); }
-};

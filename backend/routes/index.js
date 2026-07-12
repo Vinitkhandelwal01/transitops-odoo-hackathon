@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const driverSafetyRoutes = require("./driverSafetyRoutes");
 
 const authRoutes = require("./authRoutes");
 const vehicleRoutes = require("./vehicleRoutes");

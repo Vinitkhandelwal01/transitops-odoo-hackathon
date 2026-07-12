@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const USER_ROLES = ["Fleet Manager", "Dispatcher", "Safety Officer", "Financial Analyst"];
+const USER_ROLES = ["Fleet Manager", "Dispatcher", "Driver", "Safety Officer", "Financial Analyst"];
 
 const userSchema = new mongoose.Schema(
   {
@@ -74,6 +74,7 @@ const userSchema = new mongoose.Schema(
 userSchema.statics.ROLE_ACCESS_MATRIX = {
   "Fleet Manager": { fleet: "full", drivers: "full", trips: "none", fuelExpenses: "none", analytics: "full" },
   Dispatcher: { fleet: "view", drivers: "none", trips: "full", fuelExpenses: "none", analytics: "none" },
+  Driver: { fleet: "view", drivers: "none", trips: "none", fuelExpenses: "full", analytics: "none" },
   "Safety Officer": { fleet: "none", drivers: "full", trips: "view", fuelExpenses: "none", analytics: "none" },
   "Financial Analyst": { fleet: "view", drivers: "none", trips: "none", fuelExpenses: "full", analytics: "full" },
 };

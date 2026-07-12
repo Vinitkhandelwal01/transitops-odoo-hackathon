@@ -1,91 +1,48 @@
-import React, { useState } from 'react';
-import TripDispatcher from './pages/TripDispatcher';
-import DriverSafety from './pages/DriverSafety';
-import VehicleRegistry from './pages/VehicleRegistry';
-import { Truck } from 'lucide-react';
+import { Navigate, Route, Routes } from "react-router-dom";
+
+import Login from "./pages/Login.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
+import Settings from "./pages/Settings.jsx";
+import ProtectedRoute from "./routes/ProtectedRoute.jsx";
+
+import TripDispatcher from "./pages/TripDispatcher.jsx";
+import DriverSafety from "./pages/DriverSafety.jsx";
+import VehicleRegistry from "./pages/VehicleRegistry.jsx";
 
 function App() {
-  const [activePage, setActivePage] = useState('Trips');
-
   return (
-    <div className="app-container">
-      <aside className="sidebar">
-        <div className="brand">
-          <Truck color="var(--accent-color)" size={28} />
-          <span>TransitOps</span>
-        </div>
+    <Routes>
+      <Route path="/login" element={<Login />} />
 
-        <ul className="nav-menu">
-          <li className="nav-item">
-            Dashboard
-          </li>
+      <Route element={<ProtectedRoute />}>
+        <Route path="/dashboard" element={<Dashboard />} />
 
-          <li
-            className={`nav-item ${
-              activePage === 'Fleet' ? 'active' : ''
-            }`}
-            onClick={() => setActivePage('Fleet')}
-          >
-            Fleet
-          </li>
+        <Route
+          path="/fleet"
+          element={<VehicleRegistry />}
+        />
 
-          <li
-            className={`nav-item ${
-              activePage === 'Drivers' ? 'active' : ''
-            }`}
-            onClick={() => setActivePage('Drivers')}
-          >
-            Drivers
-          </li>
+        <Route
+          path="/drivers"
+          element={<DriverSafety />}
+        />
 
-          <li
-            className={`nav-item ${
-              activePage === 'Trips' ? 'active' : ''
-            }`}
-            onClick={() => setActivePage('Trips')}
-          >
-            Trips
-          </li>
+        <Route
+          path="/trips"
+          element={<TripDispatcher />}
+        />
 
-          <li className="nav-item">Maintenance</li>
-          <li className="nav-item">Fuel & Expenses</li>
-          <li className="nav-item">Analytics</li>
+        <Route
+          path="/settings"
+          element={<Settings />}
+        />
+      </Route>
 
-          <li
-            className="nav-item"
-            style={{ marginTop: 'auto' }}
-          >
-            Settings
-          </li>
-        </ul>
-      </aside>
-
-      <main className="main-content">
-        <header className="header">
-          <div className="search-bar">
-            <input type="text" placeholder="Search..." />
-          </div>
-
-          <div className="user-profile">
-            <span
-              style={{
-                fontSize: '14px',
-                fontWeight: '500',
-                color: 'var(--text-secondary)'
-              }}
-            >
-              Raven K.
-            </span>
-
-            <div className="user-avatar">RK</div>
-          </div>
-        </header>
-
-        {activePage === 'Fleet' && <VehicleRegistry />}
-        {activePage === 'Drivers' && <DriverSafety />}
-        {activePage === 'Trips' && <TripDispatcher />}
-      </main>
-    </div>
+      <Route
+        path="*"
+        element={<Navigate to="/dashboard" replace />}
+      />
+    </Routes>
   );
 }
 

@@ -99,3 +99,55 @@ th {
   padding: 10px 16px;
   cursor: pointer;
 }
+
+.toggle-section {
+  margin-top: 28px;
+}
+
+.toggle-title {
+  color: #94a3b8;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.toggle-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.toggle {
+  min-width: 120px;
+  padding: 9px 18px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.toggle.available {
+  background: #16a34a;
+}
+
+.toggle.on-trip {
+  background: #3b82f6;
+}
+
+.toggle.off-duty {
+  background: #6b7280;
+}
+
+.toggle.suspended {
+  background: #f97316;
+}
+
+.driver-rule {
+  margin-top: 12px;
+  color: #f97316;
+  font-size: 13px;
+}
+
+.status-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}

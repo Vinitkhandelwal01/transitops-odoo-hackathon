@@ -116,10 +116,10 @@ function DriverSafety() {
                     {driver.safetyStatus}
                   </span>
                 </td>
-
                 <td>
                   <select
                     value={driver.status}
+                    disabled={new Date(driver.licenseExpiryDate) < new Date()}
                     onChange={(e) => updateStatus(driver._id, e.target.value)}
                     className={`status-select ${driver.status
                       ?.toLowerCase()
@@ -135,6 +135,21 @@ function DriverSafety() {
             ))}
           </tbody>
         </table>
+      </div>
+
+      <div className="toggle-section">
+        <p className="toggle-title">TOGGLE STATUS</p>
+
+        <div className="toggle-buttons">
+          <button className="toggle available">Available</button>
+          <button className="toggle on-trip">On Trip</button>
+          <button className="toggle off-duty">Off Duty</button>
+          <button className="toggle suspended">Suspended</button>
+        </div>
+
+        <p className="driver-rule">
+          Rule: Expired license or Suspended status → blocked from trip assignment
+        </p>
       </div>
 
       {showModal && (

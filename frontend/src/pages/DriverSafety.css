@@ -1,0 +1,101 @@
+.driver-page {
+  min-height: 100vh;
+  background: #020617;
+  color: white;
+  padding: 40px;
+}
+
+.driver-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.driver-header h1 {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.driver-header p {
+  color: #94a3b8;
+}
+
+.driver-header button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.driver-table {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 18px;
+  text-align: left;
+  border-bottom: 1px solid #1e293b;
+}
+
+th {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.status {
+  background: #064e3b;
+  color: #34d399;
+  padding: 6px 12px;
+  border-radius: 15px;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.driver-modal {
+  width: 420px;
+  background: #0f172a;
+  padding: 30px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.driver-modal input,
+.driver-modal select {
+  padding: 12px;
+  background: #020617;
+  color: white;
+  border: 1px solid #334155;
+  border-radius: 6px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modal-actions button {
+  padding: 10px 16px;
+  cursor: pointer;
+}

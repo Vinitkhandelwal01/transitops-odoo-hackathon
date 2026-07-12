@@ -1,4 +1,4 @@
-# TransitOps MERN - Vehicle Registry
+# TransitOps MERN - Smart Transport Operations Platform
 
 ## Backend
 cd backend
@@ -16,6 +16,8 @@ npm run dev
 
 
 Features:
+
+**Vehicle Registry:**
 - Vehicle CRUD
 - Unique registration validation
 - Search
@@ -24,6 +26,13 @@ Features:
 - On Trip delete protection
 - Dark Vehicle Registry UI matching the supplied design
 
+**Trip Management:**
+- Interactive Trip Dispatcher Board
+- Real-time Trip Lifecycle Tracking (Draft -> Dispatched -> Completed/Cancelled)
+- Automatic Vehicle Capacity Validation
+- Driver License Expiry Checking
+- Automated Status Transitions for Vehicles and Drivers upon dispatch
+- Premium Dark Mode UI with Glassmorphism
 
 Database Collections (MongoDB)
 

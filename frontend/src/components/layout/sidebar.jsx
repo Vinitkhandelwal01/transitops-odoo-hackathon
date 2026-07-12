@@ -4,12 +4,11 @@ import { useAuth } from '../../context/AuthContext.jsx'
 
 const navItems = [
   { label: 'Dashboard', to: '/dashboard' },
-  { label: 'Fleet', to: '/dashboard' },
-  { label: 'Drivers', to: '/dashboard' },
-  { label: 'Trips', to: '/dashboard' },
-  { label: 'Maintenance', to: '/dashboard' },
-  { label: 'Fuel & Expenses', to: '/dashboard' },
-  { label: 'Analytics', to: '/dashboard' },
+  { label: 'Fleet', to: '/fleet' },
+  { label: 'Drivers', to: '/drivers' },
+  { label: 'Trips', to: '/trips' },
+  { label: 'Maintenance', to: '/maintenance' },
+  { label: 'Fuel & Expenses', to: '/fuel-expenses' },
   { label: 'Settings', to: '/settings' },
 ]
 
@@ -25,12 +24,11 @@ export default function Sidebar() {
       <nav className="space-y-4 lg:space-y-5">
         {navItems.map((item) => (
           <NavLink
-            key={`${item.label}-${item.to}`}
+            key={item.to}
             to={item.to}
             className={({ isActive }) =>
               `block rounded-[6px] border px-3 py-2 text-[13px] font-semibold transition ${
-                (item.label === 'Dashboard' && isActive && item.to === '/dashboard') ||
-                (item.label === 'Settings' && isActive)
+                isActive
                   ? 'border-orange-600 bg-orange-600/30 text-white'
                   : 'border-transparent text-zinc-300 hover:border-zinc-700 hover:bg-zinc-900/70'
               }`

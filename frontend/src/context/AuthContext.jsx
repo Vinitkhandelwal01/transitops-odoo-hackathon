@@ -45,6 +45,17 @@ export function AuthProvider({ children }) {
     }
   }
 
+  const register = async (name, email, password, role) => {
+    setLoading(true)
+
+    try {
+      await authApi.register({ name, email, password, role })
+      return login({ email, password })
+    } finally {
+      setLoading(false)
+    }
+  }
+
   const logout = () => {
     localStorage.removeItem(storageKeys.token)
     localStorage.removeItem(storageKeys.user)
@@ -59,6 +70,7 @@ export function AuthProvider({ children }) {
       loading,
       isAuthenticated: Boolean(token),
       login,
+      register,
       logout,
     }),
     [loading, token, user],

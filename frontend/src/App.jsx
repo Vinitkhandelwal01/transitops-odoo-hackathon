@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import TripDispatcher from './pages/TripDispatcher';
 import DriverSafety from './pages/DriverSafety';
+import VehicleRegistry from './pages/VehicleRegistry';
 import { Truck } from 'lucide-react';
 
 function App() {
@@ -15,9 +16,16 @@ function App() {
         </div>
 
         <ul className="nav-menu">
-          <li className="nav-item">Dashboard</li>
-
           <li className="nav-item">
+            Dashboard
+          </li>
+
+          <li
+            className={`nav-item ${
+              activePage === 'Fleet' ? 'active' : ''
+            }`}
+            onClick={() => setActivePage('Fleet')}
+          >
             Fleet
           </li>
 
@@ -73,8 +81,8 @@ function App() {
           </div>
         </header>
 
+        {activePage === 'Fleet' && <VehicleRegistry />}
         {activePage === 'Drivers' && <DriverSafety />}
-
         {activePage === 'Trips' && <TripDispatcher />}
       </main>
     </div>
